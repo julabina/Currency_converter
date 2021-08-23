@@ -19,22 +19,25 @@ body {
   width: 18px;
 }
 
+#selectContainer-inputText {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+}
+
 .switchContainer {
   width: 30px;
   height: 30px;
-  border: solid 1px hsl(197, 100%, 46%);
+  border: solid 2px hsl(197, 100%, 46%);
   border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.2s ease-in;
 }
 
 .switchContainer:hover {
-  background-color: hsl(197, 100%, 46%);
-}
-
-.switchContainer img:hover {
-  filter: brightness(100%);
+  transform: rotate(180deg);
 }
 
 #convertBtn {
