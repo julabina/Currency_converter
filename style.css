@@ -10,3 +10,43 @@ html,
 body {
   height: 100%;
 }
+
+.selectContainer {
+  display: flex;
+}
+
+.switch {
+  width: 18px;
+}
+
+.switchContainer {
+  width: 30px;
+  height: 30px;
+  border: solid 1px hsl(197, 100%, 46%);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.switchContainer:hover {
+  background-color: hsl(197, 100%, 46%);
+}
+
+.switchContainer img:hover {
+  filter: brightness(100%);
+}
+
+#convertBtn {
+  border: solid 2px hsl(197, 100%, 46%);
+  height: 30px;
+  width: 80px;
+  border-radius: 30px;
+  background-color: white;
+  color: hsl(197, 100%, 46%);
+}
+
+#convertBtn:hover {
+  background-color: hsl(197, 100%, 46%);
+  color: white;
+}

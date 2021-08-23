@@ -13,12 +13,32 @@
     </head>
     <body>
         <h1>Currency converter</h1>
-        <select name="" id="">
-            <option value="">---</option>
-            <option value="Dollard">USD</option>
-            <option value="Euro">EUR</option>
-            <option value="Swiss Franc">CHF</option>
-        </select>
+        <div class="selectContainer">
+            <input type="text" name="" id="selectContainer-inputText">
+            <select name="Currency 1" id="selectContainer-selectCurrency1">
+                <option value="">---</option>
+                <option value="Dollard">USD</option>
+                <option value="Euro">EUR</option>
+                <option value="Swiss Franc">CHF</option>
+                <option value="Japanese Yen">JPY</option>
+                <option value="British Pound">GBP</option>
+            </select>
+            <div class="switchContainer">
+                <img class="switch" src="./image/switch.png" alt="Icon for switch currency">
+            </div>
+            <select name="Currency 2" id="selectContainer-selectCurrency2">
+                <option value="">---</option>
+                <option value="Dollard">USD</option>
+                <option value="Euro">EUR</option>
+                <option value="Swiss Franc">CHF</option>
+                <option value="Japanese Yen">JPY</option>
+                <option value="British Pound">GBP</option>
+            </select>
+        </div>
+        <input id="convertBtn" type="button" value="Convertir">
+        <div class="resultContainer">
+
+        </div>
         <script src="index.js"></script>
     </body>
 </html>
