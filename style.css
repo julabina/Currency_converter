@@ -11,8 +11,16 @@ body {
   height: 100%;
 }
 
+.error {
+  visibility: hidden;
+}
+
 .selectContainer {
   display: flex;
+}
+
+select {
+  border-radius: 5px;
 }
 
 .switch {
