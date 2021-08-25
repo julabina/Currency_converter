@@ -5,7 +5,7 @@ const btnConv = document.getElementById("convertBtn");
 const btnSwitch = document.querySelector(".switchContainer");
 const resultContainer = document.querySelector(".resultContainer");
 
-let countries, currency;
+let countries, currency, select3;
 inputChecked = false;
 
 fetch("data.json")
@@ -26,6 +26,7 @@ const errorDisplay = (message, valid) => {
   if (!valid) {
     span.classList.remove("error");
     span.textContent = message;
+    resultContainer.classList.add("error");
   } else {
     span.classList.add("error");
     span.textContent = message;
@@ -36,7 +37,7 @@ function inputCheck() {
   inputChecked = false;
   if (inputText.value === "") {
     errorDisplay("Cannot be empty");
-  } else if (!inputText.value.match(/^[0-9,\.]*$/i)) {
+  } else if (!inputText.value.match(/^[0-9\.]*$/i)) {
     errorDisplay("Only numbers are needed");
   } else {
     errorDisplay("", true);
@@ -63,7 +64,12 @@ const convert = () => {
 };
 
 const switchSelected = () => {
-  console.log("test");
+  select3 = select1.value;
+  select1.value = select2.value;
+  select2.value = select3;
+  if (!resultContainer.classList.contains("error")) {
+    convert();
+  }
 };
 
 const displayConvert = () => {
@@ -74,7 +80,7 @@ const displayConvert = () => {
   valSelect2 = countries[b];
   valSelect3 = currency[a];
   valSelect4 = currency[b];
-
+  resultContainer.classList.remove("error");
   resultContainer.innerHTML = `
   <p>${inputText.value} ${valSelect1.name} = ${
     Math.round(result * 100) / 100

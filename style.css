@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Mada:wght@400;600&display=swap");
+
 *,
 *::before,
 *::after {
@@ -11,8 +13,24 @@ body {
   height: 100%;
 }
 
+h1 {
+  margin-bottom: 25px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Mada", sans-serif;
+}
+
 .error {
   visibility: hidden;
+}
+
+#errorSpan {
+  font-size: 0.9em;
+  color: rgb(224, 20, 20);
 }
 
 .selectContainer {
@@ -21,6 +39,7 @@ body {
 
 select {
   border-radius: 5px;
+  margin: 0 5px;
 }
 
 .switch {
@@ -31,6 +50,7 @@ select {
   width: 100px;
   height: 30px;
   border-radius: 5px;
+  margin-right: 10px;
 }
 
 .switchContainer {
@@ -55,9 +75,20 @@ select {
   border-radius: 30px;
   background-color: white;
   color: hsl(197, 100%, 46%);
+  margin-top: 10px;
 }
 
 #convertBtn:hover {
   background-color: hsl(197, 100%, 46%);
   color: white;
+}
+
+.convertContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.resultContainer {
+  margin-top: 20px;
+  font-size: 1.1em;
 }
