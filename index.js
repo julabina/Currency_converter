@@ -42,14 +42,15 @@ const convert = () => {
   } else {
     console.log("test3");
   }
-  console.log(typeof countries);
-  val = { countries: a };
-  countries.val;
-  console.log(a);
+  val = currency[a];
+  val[b];
   console.log(val);
-  console.log(countries + "." + val);
-  console.log(val.name);
+  console.log(val[b]);
+  console.log(val[b].value);
+  console.log(currency[a]);
 };
+
 btnConv.addEventListener("click", () => {
   convert();
 });
+/*  */
