@@ -5,97 +5,74 @@
             "value": 0.855066
         },
         "chf":{
-            "value": 0.9168812
-        }
-    },
-     /* [
-        {
-            "to": "eur",
-            "value": 0.855066
-        },
-        {
-            "to": "chf",
             "value": 0.916881
         },
-        {
-            "to": "jpy",
+        "jpy": {
             "value": 109.799021
         },
-        {
-            "to": "gbp",
+        "gbp": {
             "value": 0.733945
         }
-    ], */
-    "eur": [
-        {
-            "to": "usd",
-            "value" : 1.1695
+    },
+
+    "eur": {
+       "usd" :{
+             "value" : 1.1695
         },
-        {
-            "to":"chf",
+       "chf": {
             "value": 1.072293
         },
-        {
-            "to":"jpy",
+       "jpy" :{
             "value": 128.431114
         },
-        {
-            "to":"gbp",
+       "gbp" :{
             "value": 0.858491
         }
-    ],
-    "chf": [
-        {
-            "to":"usd",
+    },
+
+    "chf": {
+      "usd"  :{
             "value": 1.090654
         },
-        {
-            "to":"eur",
+      "eur":  {
             "value": 0.933366
         },
-        {
-            "to":"jpy",
+      "jpy" : {
             "value": 119.85351
         },
-        {
-            "to":"gbp",
+       "gbp": {
             "value": 0.801154
         }
-    ],
-    "jpy": [
-        {
-            "to":"usd",
+    },
+
+    "jpy": {
+      "usd" : {
             "value": 0.009108
         },
-        {
-            "to":"eur",
+       "eur": {
             "value": 0.007787
         },
-        {
-            "to":"chf",
+       "chf": {
             "value": 0.008343
         },
-        {
-            "to":"gbp",
+       "gbp" :{
             "value": 0.006684
         }
-    ],
-    "gbp": [
-        {
-            "to":"usd",
+    },
+
+    "gbp": {
+       "usd" :{
             "value": 1.3625
         },
-        {
-            "to":"eur",
+      "eur"  :{
             "value": 1.164835
         },
-        {
-            "to":"chf",
+       "chf" :{
             "value": 1.2482
         },
-        {
-            "to":"jpy",
+       "jpy" :{
             "value": 149.601077
         }
 
-    ]
+    }
+}

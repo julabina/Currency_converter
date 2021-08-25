@@ -1,23 +1,12 @@
 const select1 = document.getElementById("selectContainer-selectCurrency1");
 const select2 = document.getElementById("selectContainer-selectCurrency2");
-const input = document.getElementById("selectContainer-inputText");
+const inputText = document.getElementById("selectContainer-inputText");
 const btnConv = document.getElementById("convertBtn");
+const btnSwitch = document.querySelector(".switchContainer");
+const resultContainer = document.querySelector(".resultContainer");
 
 let countries, currency;
-
-const errorDisplay = (valid) => {
-  const span = document.getElementById("errorSpan");
-
-  if (!valid) {
-    span.classList.remove("error");
-  } else {
-    span.classList.add("error");
-  }
-};
-
-function inputCheck() {
-  console.log(countries.chf);
-}
+inputChecked = false;
 
 fetch("data.json")
   .then((res) => res.json())
@@ -31,27 +20,74 @@ fetch("convert.json")
     currency = data;
   });
 
+const errorDisplay = (message, valid) => {
+  const span = document.getElementById("errorSpan");
+
+  if (!valid) {
+    span.classList.remove("error");
+    span.textContent = message;
+  } else {
+    span.classList.add("error");
+    span.textContent = message;
+  }
+};
+
+function inputCheck() {
+  inputChecked = false;
+  if (inputText.value === "") {
+    errorDisplay("Cannot be empty");
+  } else if (!inputText.value.match(/^[0-9,\.]*$/i)) {
+    errorDisplay("Only numbers are needed");
+  } else {
+    errorDisplay("", true);
+    inputChecked = true;
+  }
+}
+
 const convert = () => {
   a = select1.value;
   b = select2.value;
-
-  if (select1.value === "" || select2.value === "") {
-    console.log("test1");
-  } else if (select1.value === select2.value) {
-    console.log("test2");
-  } else {
-    console.log("test3");
+  inputCheck();
+  if (inputChecked === true) {
+    if (a === "" || b === "") {
+      errorDisplay("select two currencys");
+    } else if (a === b) {
+      errorDisplay("currencys cannot be the same");
+    } else {
+      errorDisplay("", true);
+      val = currency[a];
+      result = inputText.value * val[b].value;
+      displayConvert();
+    }
   }
+};
 
-  /*  val = currency[a];
-  val[b];
-  console.log(val);
-  console.log(val[b]);
-  console.log(val[b].value);
-  console.log(currency[a]); */
+const switchSelected = () => {
+  console.log("test");
+};
+
+const displayConvert = () => {
+  a = select1.value;
+  b = select2.value;
+
+  valSelect1 = countries[a];
+  valSelect2 = countries[b];
+  valSelect3 = currency[a];
+  valSelect4 = currency[b];
+
+  resultContainer.innerHTML = `
+  <p>${inputText.value} ${valSelect1.name} = ${
+    Math.round(result * 100) / 100
+  } ${valSelect2.name}</p>
+  <p>1 ${valSelect1.symbol} = ${valSelect3[b].value} ${valSelect2.symbol}</p>
+  <p>1 ${valSelect2.symbol} = ${valSelect4[a].value} ${valSelect1.symbol}</p>
+  `;
 };
 
 btnConv.addEventListener("click", () => {
   convert();
 });
-/*  */
+
+btnSwitch.addEventListener("click", () => {
+  switchSelected();
+});
