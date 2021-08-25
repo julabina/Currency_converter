@@ -31,8 +31,7 @@ fetch("convert.json")
     currency = data;
   });
 
-console.log(select1.value);
-const convert = (val) => {
+const convert = () => {
   a = select1.value;
   b = select2.value;
 
@@ -43,14 +42,14 @@ const convert = (val) => {
   } else {
     console.log("test3");
   }
-  let test = new Object();
-  val = select1.value;
-  test = ${countries}.val
-  console.log(countries);
-  console.log(test);
+  console.log(typeof countries);
+  val = { countries: a };
+  countries.val;
+  console.log(a);
   console.log(val);
+  console.log(countries + "." + val);
+  console.log(val.name);
 };
-
 btnConv.addEventListener("click", () => {
   convert();
 });
