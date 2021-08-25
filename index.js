@@ -42,12 +42,13 @@ const convert = () => {
   } else {
     console.log("test3");
   }
-  val = currency[a];
+
+  /*  val = currency[a];
   val[b];
   console.log(val);
   console.log(val[b]);
   console.log(val[b].value);
-  console.log(currency[a]);
+  console.log(currency[a]); */
 };
 
 btnConv.addEventListener("click", () => {
