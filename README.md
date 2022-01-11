@@ -1,4 +1,4 @@
-# Currency_converter
+# Currency converter
 
 Training javascript app.
 
